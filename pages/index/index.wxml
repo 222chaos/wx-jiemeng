@@ -1,0 +1,18 @@
+<view class="container">
+  <image class="logo" src="/static/zgjm.png" mode="widthFix" />
+
+  <textarea
+    class="input"
+    placeholder="请输入梦境"
+    maxlength="200"
+    auto-height
+    bindinput="onInput"
+  ></textarea>
+  <view class="count">{{dream.length}} / 200</view>
+
+  <button class="btn" bindtap="onSubmit" loading="{{loading}}">
+  {{loading ? loadingText : '解 梦'}}
+</button>
+
+  <view class="result">{{result}}</view>
+</view>
