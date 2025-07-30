@@ -1,18 +1,73 @@
 <view class="container">
-  <image class="logo" src="/static/zgjm.png" mode="widthFix" />
+  <!-- 头部logo -->
+  <view class="header">
+    <image class="logo" src="/static/zgjm.png" mode="widthFix" />
+    <view class="subtitle">探索梦境的奥秘，解读内心的声音</view>
+  </view>
 
-  <textarea
-    class="input"
-    placeholder="请输入梦境"
-    maxlength="200"
-    auto-height
-    bindinput="onInput"
-  ></textarea>
-  <view class="count">{{dream.length}} / 200</view>
+  <!-- 输入区域 -->
+  <view class="input-section">
+    <view class="input-header">
+      <text class="input-label">请描述你的梦境</text>
+      <text class="input-tip">详细描述有助于更准确的解梦</text>
+    </view>
+    
+    <textarea
+      class="input"
+      placeholder="例如：我梦见自己在飞翔，飞过了高山和大海..."
+      placeholder-class="placeholder"
+      maxlength="500"
+      auto-height
+      bindinput="onInput"
+      value="{{dream}}"
+      focus="{{!result}}"
+    ></textarea>
+    
+    <view class="input-footer">
+      <view class="count">{{dream.length}} / 500</view>
+      <view class="clear-btn" bindtap="onClear" wx:if="{{dream}}">
+        <text class="clear-icon">×</text>
+      </view>
+    </view>
+  </view>
 
-  <button class="btn" bindtap="onSubmit" loading="{{loading}}">
-  {{loading ? loadingText : '解 梦'}}
-</button>
+  <!-- 操作按钮 - 固定在输入框下方 -->
+  <view class="button-section">
+    <button 
+      class="submit-btn {{loading ? 'loading' : ''}}" 
+      bindtap="onSubmit" 
+      loading="{{loading}}"
+      disabled="{{loading || dream.length === 0}}"
+    >
+      <text class="btn-text">{{loading ? loadingText : '开始解梦'}}</text>
+    </button>
+  </view>
 
-  <view class="result">{{result}}</view>
+  <!-- 结果区域 -->
+  <view class="result-section" wx:if="{{resultVisible || result}}">
+    <view class="result-header">
+      <text class="result-title">🔮 解梦结果</text>
+      <view class="result-actions">
+        <button class="action-btn" bindtap="onCopyResult" wx:if="{{result && !loading}}">
+          复制
+        </button>
+      </view>
+    </view>
+    
+    <view class="result {{loading ? 'loading-result' : ''}}">
+      <text class="result-text" wx:if="{{result}}">{{result}}</text>
+      
+      <!-- 加载动画 -->
+      <view class="loading-dots" wx:if="{{loading}}">
+        <view class="dot"></view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="footer" wx:if="{{!result && !loading}}">
+    <text class="footer-text">✨ 解梦仅供娱乐参考，请理性对待</text>
+  </view>
 </view>
