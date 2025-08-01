@@ -30,7 +30,6 @@
     <button 
       class="submit-btn {{loading ? 'loading' : ''}}" 
       bindtap="onSubmit" 
-      loading="{{loading}}"
       disabled="{{loading || dream.length === 0}}"
     >
       <text class="btn-text">{{loading ? loadingText : '开始'}}</text>

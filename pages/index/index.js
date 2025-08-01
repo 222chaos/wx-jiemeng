@@ -80,7 +80,7 @@ Page({
 
     try {
       const task = wx.request({
-        url: 'https://zgjm-api-theta.vercel.app/api/ds-zgjm',
+        url: 'https://xzpppb.2chaos.top/api/ds-zgjm',
         method: 'POST',
         enableChunked: true,
         timeout: 30000,
