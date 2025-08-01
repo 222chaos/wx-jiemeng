@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="input-box">
+    <textarea class="input" placeholder="写点什么..." bindinput="onInput" value="{{input}}" auto-height></textarea>
+    <button class="add-btn" bindtap="addMemo">添加</button>
+  </view>
+
+  <view class="list">
+    <block wx:for="{{notes}}" wx:key="index">
+      <view class="memo">
+        <view class="top">
+          <text class="text">{{item.text}}</text>
+          <button class="del" bindtap="deleteMemo" data-index="{{index}}">删除</button>
+        </view>
+        <view class="time">{{item.time}}</view>
+      </view>
+    </block>
+  </view>
+</view>

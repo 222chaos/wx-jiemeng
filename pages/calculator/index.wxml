@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="display">
+    <text class="expression">{{expression}}</text>
+    <text class="result">{{result}}</text>
+  </view>
+
+  <view class="keyboard">
+    <block wx:for="{{buttons}}" wx:for-item="row" wx:key="row">
+      <view class="row">
+        <block wx:for="{{row}}" wx:for-item="btn" wx:key="btn">
+          <button class="btn" data-value="{{btn}}" bindtap="onButtonTap">{{btn}}</button>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

@@ -3,7 +3,7 @@ Page({
     dream: '',
     result: '',
     loading: false,
-    loadingText: '正在解梦...',
+    loadingText: '...',
     resultVisible: false
   },
 
@@ -30,7 +30,7 @@ Page({
     // 输入验证
     if (!dream.trim()) {
       wx.showToast({ 
-        title: '请输入梦境内容', 
+        title: '请输入内容', 
         icon: 'none',
         duration: 2000
       });
@@ -39,7 +39,7 @@ Page({
 
     if (dream.trim().length < 5) {
       wx.showToast({ 
-        title: '请输入更详细的梦境描述', 
+        title: '请输入更详细的描述', 
         icon: 'none',
         duration: 2000
       });
@@ -48,17 +48,13 @@ Page({
 
     // 随机加载文案
     const loadingTexts = [
-      '正在连接周公...',
       '正在翻阅古籍...',
-      '解梦大师思考中...',
       '好运正在路上...',
       '慢工出细活，久久方为功...',
-      '周公正在解读梦境，请稍候...',
-      '古人云：日有所思，夜有所梦...',
       '卖力解析中...',
-      '梦境解码进行中...',
       '穿越时空咨询中...',
       '马上就要完成了...',
+      '正在加载中101%...',
     ];
     
     const randomIndex = Math.floor(Math.random() * loadingTexts.length);
@@ -209,13 +205,4 @@ Page({
       }
     });
   },
-
-  // 分享功能
-  onShareAppMessage() {
-    return {
-      title: '周公解梦 - 解读你的梦境奥秘',
-      path: '/pages/index/index',
-      imageUrl: '/static/share.png' // 需要添加分享图片
-    };
-  }
 });

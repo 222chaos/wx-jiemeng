@@ -1,0 +1,49 @@
+.container {
+  padding: 30rpx;
+}
+.input-box {
+  margin-bottom: 30rpx;
+}
+.input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.add-btn {
+  margin-top: 20rpx;
+  width: 100%;
+  background-color: #c9a876;
+  color: white;
+  padding: 12rpx 0;
+  border-radius: 8rpx;
+}
+.list .memo {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.memo .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.memo .text {
+  font-size: 30rpx;
+  color: #333;
+  flex: 1;
+}
+.memo .del {
+  background-color: #f44336;
+  color: white;
+  padding: 0 20rpx;
+  border-radius: 8rpx;
+}
+.memo .time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}

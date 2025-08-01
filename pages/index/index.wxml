@@ -1,20 +1,14 @@
 <view class="container">
   <!-- 头部logo -->
   <view class="header">
-    <image class="logo" src="/static/zgjm.png" mode="widthFix" />
-    <view class="subtitle">探索梦境的奥秘，解读内心的声音</view>
+    <image class="logo" src="/static/2.png" mode="widthFix" />
   </view>
 
   <!-- 输入区域 -->
   <view class="input-section">
-    <view class="input-header">
-      <text class="input-label">请描述你的梦境</text>
-      <text class="input-tip">详细描述有助于更准确的解梦</text>
-    </view>
-    
     <textarea
       class="input"
-      placeholder="例如：我梦见自己在飞翔，飞过了高山和大海..."
+      placeholder="请输入..."
       placeholder-class="placeholder"
       maxlength="500"
       auto-height
@@ -39,14 +33,14 @@
       loading="{{loading}}"
       disabled="{{loading || dream.length === 0}}"
     >
-      <text class="btn-text">{{loading ? loadingText : '开始解梦'}}</text>
+      <text class="btn-text">{{loading ? loadingText : '开始'}}</text>
     </button>
   </view>
 
   <!-- 结果区域 -->
   <view class="result-section" wx:if="{{resultVisible || result}}">
     <view class="result-header">
-      <text class="result-title">🔮 解梦结果</text>
+      <text class="result-title">结果</text>
       <view class="result-actions">
         <button class="action-btn" bindtap="onCopyResult" wx:if="{{result && !loading}}">
           复制
@@ -56,18 +50,7 @@
     
     <view class="result {{loading ? 'loading-result' : ''}}">
       <text class="result-text" wx:if="{{result}}">{{result}}</text>
-      
-      <!-- 加载动画 -->
-      <view class="loading-dots" wx:if="{{loading}}">
-        <view class="dot"></view>
-        <view class="dot"></view>
-        <view class="dot"></view>
-      </view>
     </view>
   </view>
 
-  <!-- 底部提示 -->
-  <view class="footer" wx:if="{{!result && !loading}}">
-    <text class="footer-text">✨ 解梦仅供娱乐参考，请理性对待</text>
-  </view>
 </view>

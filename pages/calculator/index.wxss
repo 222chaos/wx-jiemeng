@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.display {
+  background: #f2f2f2;
+  padding: 30rpx 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  min-height: 200rpx;
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+}
+
+.expression {
+  font-size: 32rpx;
+  color: #666;
+}
+
+.result {
+  font-size: 56rpx;
+  color: #111;
+  font-weight: bold;
+}
+
+.keyboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.row {
+  display: flex;
+  gap: 10rpx;
+}
+
+.btn {
+  flex: 1;
+  font-size: 36rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
+}

@@ -1,9 +1,39 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/calculator/index",
+    "pages/index/index",
+    "pages/memo/index"
   ],
   "window": {
-    "navigationBarTitleText": "周公解梦",
-    "backgroundColor": "#ffffff"
+    "navigationBarTitleText": "小周陪陪陪伴",
+    "navigationBarBackgroundColor": "#fdf6ec",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fdf6ec"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/calculator/index",
+        "text": "计算器",
+        "iconPath": "static/calculator.png",
+        "selectedIconPath": "static/calculator.png"
+      },
+      {
+        "pagePath": "pages/memo/index",
+        "text": "备忘录",
+        "iconPath": "static/memo.png",
+        "selectedIconPath": "static/memo.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "查快递",
+        "iconPath": "static/db.png",
+        "selectedIconPath": "static/db.png"
+      }
+    ],
+    "color": "#999999",
+    "selectedColor": "#c9a876",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black"
   }
 }
